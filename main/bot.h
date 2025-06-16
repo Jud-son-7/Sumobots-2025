@@ -1,6 +1,8 @@
-bool isFwd = true;
+#ifndef BOT_H
+#define BOT_H
+#include "botInterface.h"
 
-void turnRight();
+bool isFwd = true; // need to find a better way to do this
 
 void setForwards()
 {
@@ -49,16 +51,6 @@ void turnRight()
   }
 }
 
-void setSensorData()
-{
-  dist_1 = getDistance(ULT_1_TRIG, ULT_1_ECHO);
-  dist_2 = getDistance(ULT_2_TRIG, ULT_2_ECHO);
-  dist_3 = getDistance(ULT_3_TRIG, ULT_3_ECHO);
-  // TODO: set the accelerometer data
-  // TODO: set weight/pressure sensor data
-  // TODO: set the light sensor data
-}
-
 /*
   returns the distance in cm, of how far something is
  */
@@ -76,9 +68,6 @@ double getDistance(int trig, int echo)
 
 }
 
-
-
-
 // May not be need since we may initiialise the speed
 // to the highest possible speed from the get go
 void setSpeed()
@@ -86,6 +75,7 @@ void setSpeed()
   // TODO
 }
 
+#endif 
 
 
 
